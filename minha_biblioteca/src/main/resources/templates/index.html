@@ -21,20 +21,23 @@
             <hr>
 
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4 mb-3" th:each="evento : ${eventos}">
+                <div class="col-12 col-md-6 col-lg-4 mb-3" th:each="livro : ${livros}">
 
                     <div class="card h-100">
                         <div class="card-body">
-                            <h5 class="card-title" th:text="${evento.nome}"></h5>
+                            <h5 class="card-title" th:text="${livro.titulo}"></h5>
 
-                            <h6 class="card-subtitle mb-2 text-body-secondary">ID: <span th:text="${evento.idEvento}"></span></h6>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">ID: <span th:text="${livro.id}"></span></h6>
 
-                            <div class="card-text">Local: <span th:text="${evento.local}"></span></div>
-                            <div class="card-text">Data: <span th:text="${#temporals.format(evento.data, 'dd/MM/yyyy')}"></span></div>
-                            <div class="card-text">Hora: <span th:text="${evento.hora}"></span></div>
+                            <div class="card-text">Autor: <span th:text="${livro.autor}"></span></div>
+                            <div class="card-text">Gênero: <span th:text="${livro.genero}"></span></div>
+                            <div class="card-text">Ano de Publicação: <span th:text="${livro.anopublicacao}"></span></div>
+                            <div class="card-text">Lido: <span th:text="${livro.lido}"></span></div>
+                            <div class="card-text">Nota: <span th:text="${livro.nota}"></span></div>
+                            <div class="card-text">Data de Cadastro: <span th:text="${#temporals.format(livro.datacadastro, 'dd/MM/yyyy')}"></span></div>                            
 
-                            <a th:href="@{'/editarEvento/' + ${evento.idEvento}}" class="card-link">Editar</a>
-                            <a th:href="@{/confirmarExclusao/{id}(id=${evento.idEvento})}" class="card-link">Excluir</a>
+                            <a th:href="@{'/editarLivro/' + ${livro.id}}" class="card-link">Editar</a>
+                            <a th:href="@{/confirmarExclusao/{id}(id=${livro.id})}" class="card-link">Excluir</a>
                         </div>
                     </div>
 

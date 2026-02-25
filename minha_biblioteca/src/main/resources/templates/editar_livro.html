@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Editar Evento</title>
+    <title>Editar Livro Cadastrado</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -22,21 +22,42 @@
             <form method="post" class="mt-5">
                 <div class="row">
                     <div class="mb-3">
-                        <label for="nome" class="form-label">Nome:</label>
-                        <input type="text" class="form-control" id="nome" name="nome" th:value="${evento.nome}" required>
+                        <label for="titulo" class="form-label">Titulo:</label>
+                        <input type="text" class="form-control" id="titulo" name="titulo" th:value="${livro.titulo}" required>
                     </div>
                     <div class="mb-3">
-                        <label for="local" class="form-label">Local:</label>
-                        <input type="text" class="form-control" id="local" name="local" th:value="${evento.local}" required>
+                        <label for="autor" class="form-label">Autor:</label>
+                        <input type="text" class="form-control" id="autor" name="autor" th:value="${livro.autor}" required>
                     </div>
                     <div class="mb-3">
-                        <label for="local" class="form-label">Data:</label>
-                        <input type="date" class="form-control" id="data" name="data" th:value="${evento.data != null ? #temporals.format(evento.data, 'yyyy-MM-dd') : ''}" required>
+                        <label for="genero" class="form-label">Gênero:</label>
+                        <input type="text" class="form-control" id="genero" name="genero" th:value="${livro.genero}" required>
                     </div>
                     <div class="mb-3">
-                        <label for="hora" class="form-label">Hora:</label>
-                        <input type="time" class="form-control" id="hora" name="hora" th:value="${evento.hora}" required>
+                        <label for="anopublicacao" class="form-label">Ano de Publicação:</label>
+                        <input type="number" class="form-control" id="anopublicacao" name="anopublicacao" th:value="${livro.anopublicacao}" required>
                     </div>
+                     <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lido" id="lido" th:value="${livro.lido}">
+                        <label class="form-check-label" for="lido">
+                            Lido
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lido" id="naolido" th:value="${livro.naolido}" checked>
+                        <label class="form-check-label" for="naolido">
+                            Não Lido
+                        </label>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nota" class="form-label">Nota:</label>
+                        <input type="number" class="form-control" id="nota" name="nota" th:value="${livro.nota}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="datacadastro" class="form-label">Data do Cadastro:</label>
+                        <input type="date" class="form-control" id="datacadastro" name="datacadastro" th:value="${livro.datacadastro != null ? #temporals.format(livro.datacadastro, 'yyyy-MM-dd') : ''}" required>
+                    </div>                    
                     <div class="mb-3 mt-5">
                         <button type="submit" class="btn btn-outline-secondary">Editar</button>
                     </div>

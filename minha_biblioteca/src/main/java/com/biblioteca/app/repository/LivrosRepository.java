@@ -2,12 +2,12 @@ package com.biblioteca.app.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.biblioteca.app.model.Livro;
+import com.biblioteca.app.models.Livro;
 
 public interface LivrosRepository extends CrudRepository<Livro, String>{
 
-    Livro findByLivro(Long id);
+    Livro findById(Long id);
 
-    Livro deleteByILivro(long id);
+    Livro deleteById(long id);
 
 }

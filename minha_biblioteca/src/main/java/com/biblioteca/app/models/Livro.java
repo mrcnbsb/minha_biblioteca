@@ -1,4 +1,4 @@
-package com.biblioteca.app.model;
+package com.biblioteca.app.models;
 
 import java.io.Serializable;
 import java.time.LocalDate;
