@@ -32,9 +32,9 @@
                             <div class="card-text">Autor: <span th:text="${livro.autor}"></span></div>
                             <div class="card-text">Gênero: <span th:text="${livro.genero}"></span></div>
                             <div class="card-text">Ano de Publicação: <span th:text="${livro.anoPublicacao}"></span></div>
-                            <div class="card-text">Lido: <span th:text="${livro.lido}"></span></div>
+                            <!-- <div class="card-text">Lido: <span th:text="${livro.lido}"></span></div> -->
                             <div class="card-text">Nota: <span th:text="${livro.nota}"></span></div>
-                            <div class="card-text">Data de Cadastro: <span th:text="${#temporals.format(livro.dataCadastro, 'dd/MM/yyyy')}"></span></div>                            
+                            <!-- <div class="card-text">Data de Cadastro: <span th:text="${#temporals.format(livro.dataCadastro, 'dd/MM/yyyy')}"></span></div>                             -->
 
                             <a th:href="@{'/editarLivro/' + ${livro.id}}" class="card-link">Editar</a>
                             <a th:href="@{/confirmarExclusao/{id}(id=${livro.id})}" class="card-link">Excluir</a>

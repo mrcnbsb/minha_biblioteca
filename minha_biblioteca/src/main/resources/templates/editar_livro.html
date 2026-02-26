@@ -36,28 +36,11 @@
                     <div class="mb-3">
                         <label for="anoPublicacao" class="form-label">Ano de Publicação:</label>
                         <input type="number" class="form-control" id="anoPublicacao" name="anoPublicacao" th:value="${livro.anoPublicacao}" required>
-                    </div>
-                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lido" id="lido" th:value="${livro.lido}">
-                        <label class="form-check-label" for="lido">
-                            Lido
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lido" id="naolido" th:value="${livro.lido}" checked>
-                        <label class="form-check-label" for="naolido">
-                            Não Lido
-                        </label>
-                    </div>
+                    </div>                        
                     <div class="mb-3">
                         <label for="nota" class="form-label">Nota:</label>
-                        <input type="number" class="form-control" id="nota" name="nota" th:value="${livro.nota}" required>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="datacadastro" class="form-label">Data do Cadastro:</label>
-                        <input type="date" class="form-control" id="datacadastro" name="datacadastro" th:value="${livro.dataCadastro != null ? #temporals.format(livro.datacadastro, 'yyyy-MM-dd') : ''}" required>
-                    </div>                    
+                        <input type="number" class="form-control" id="nota" name="nota" th:value="${livro.nota}" min="1" max="5" step="1" required>
+                    </div>                                       -->
                     <div class="mb-3 mt-5">
                         <button type="submit" class="btn btn-outline-secondary">Editar</button>
                     </div>

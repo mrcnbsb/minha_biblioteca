@@ -1,7 +1,6 @@
 package com.biblioteca.app.models;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,24 +18,20 @@ public class Livro implements Serializable {
     private String titulo;
     private String autor;
     private String genero;
-    private Integer anoPublicacao;
-    private Boolean lido;
+    private Integer anoPublicacao;    
     private Integer nota;
-    private LocalDate dataCadastro;
-
+    
     public Livro(){
     }
 
 
-    public Livro(long id, String titulo, String autor, String genero, Integer anoPublicacao, Boolean lido, Integer nota, LocalDate dataCadastro) {
+    public Livro(long id, String titulo, String autor, String genero, Integer anoPublicacao, Integer nota) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
-        this.anoPublicacao = anoPublicacao;
-        this.lido = lido;
-        this.nota = nota;
-        this.dataCadastro = dataCadastro;
+        this.anoPublicacao = anoPublicacao;        
+        this.nota = nota;        
     }
 
 
@@ -78,19 +73,7 @@ public class Livro implements Serializable {
 
     public void setAnoPublicacao(Integer anoPublicacao) {
         this.anoPublicacao = anoPublicacao;
-    }
-
-    public Boolean isLido() {
-        return this.lido;
-    }
-
-    public Boolean getLido() {
-        return this.lido;
-    }
-
-    public void setLido(Boolean lido) {
-        this.lido = lido;
-    }
+    }    
 
     public Integer getNota() {
         return this.nota;
@@ -98,27 +81,5 @@ public class Livro implements Serializable {
 
     public void setNota(Integer nota) {
         this.nota = nota;
-    }
-
-    public LocalDate getDataCadastro() {
-        return this.dataCadastro;
-    }
-
-    public void setDataCadastro(LocalDate dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", titulo='" + getTitulo() + "'" +
-            ", autor='" + getAutor() + "'" +
-            ", genero='" + getGenero() + "'" +
-            ", anoPublicacao='" + getAnoPublicacao() + "'" +
-            ", lido='" + isLido() + "'" +
-            ", nota='" + getNota() + "'" +
-            ", dataCadastro='" + getDataCadastro() + "'" +
-            "}";
-    }
+    }    
 }
