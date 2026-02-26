@@ -15,10 +15,10 @@
     <!-- fim header -->
 
     <!-- main -->
-    <main class="bg-light py-4">
+    <main class="py-5 bg-light">
         <div class="container">
-            <h1>Minha Biblioteca</h1>
-            <hr>
+            <h1 class="fw-bold mb-4">📚 Minha Biblioteca</h1>
+            <hr class="mb-5">
 
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4 mb-3" th:each="livro : ${livros}">
@@ -27,17 +27,17 @@
                         <div class="card-body">
                             <h5 class="card-title" th:text="${livro.titulo}"></h5>
 
-                            <h6 class="card-subtitle mb-2 text-body-secondary">ID: <span th:text="${livro.id}"></span></h6>
+                            <!-- <h6 class="card-subtitle mb-2 text-body-secondary">ID: <span th:text="${livro.id}"></span></h6> -->
 
-                            <div class="card-text">Autor: <span th:text="${livro.autor}"></span></div>
-                            <div class="card-text">Gênero: <span th:text="${livro.genero}"></span></div>
-                            <div class="card-text">Ano de Publicação: <span th:text="${livro.anoPublicacao}"></span></div>
+                            <div class="card-text">👤Autor: <span th:text="${livro.autor}"></span></div>
+                            <div class="card-text">🏷Gênero: <span th:text="${livro.genero}"></span></div>
+                            <div class="card-text">📅Ano de Publicação: <span th:text="${livro.anoPublicacao}"></span></div>
                             <!-- <div class="card-text">Lido: <span th:text="${livro.lido}"></span></div> -->
-                            <div class="card-text">Nota: <span th:text="${livro.nota}"></span></div>
+                            <div class="card-text">⭐Nota: <span th:text="${livro.nota}"></span></div>
                             <!-- <div class="card-text">Data de Cadastro: <span th:text="${#temporals.format(livro.dataCadastro, 'dd/MM/yyyy')}"></span></div>                             -->
-
-                            <a th:href="@{'/editarLivro/' + ${livro.id}}" class="card-link">Editar</a>
-                            <a th:href="@{/confirmarExclusao/{id}(id=${livro.id})}" class="card-link">Excluir</a>
+                            <hr>
+                            <a th:href="@{'/editarLivro/' + ${livro.id}}" class="btn btn-sm btn-outline-primary rounded-pill">✏ Editar</a>
+                            <a th:href="@{/confirmarExclusao/{id}(id=${livro.id})}" class="btn btn-sm btn-outline-danger rounded-pill">🗑️Excluir</a>
                         </div>
                     </div>
 
